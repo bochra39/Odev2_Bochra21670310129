@@ -1,0 +1,68 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev2_Bochra.ToDoList"
+             Title="Yapılacaklar Listesi">
+
+    <Grid
+        RowDefinitions="Auto,Auto,*,Auto"
+        ColumnDefinitions="*,*"
+        RowSpacing="15"
+        ColumnSpacing="10"
+        Padding="15">
+
+        <!-- Buttons -->
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Spacing="15">
+            <Button
+                Text="Not Ekle"
+                x:Name="notEkleButton"
+                BackgroundColor="DarkGray"
+                TextColor="White"
+                CornerRadius="10"
+                Padding="10,5"/>
+            <Button
+                Text="Kaydet"
+                x:Name="kaydetButton"
+                BackgroundColor="DarkGray"
+                TextColor="White"
+                CornerRadius="10"
+                Padding="10,5"/>
+        </StackLayout>
+
+        <!-- Tasks CollectionView -->
+        <CollectionView
+            x:Name="tasksCollectionView"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="0"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10" Padding="10" Margin="0,5" HasShadow="True" BorderColor="#878681" BackgroundColor="#F7F7F7">
+                        <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto" Padding="5">
+                            <!-- Task Text -->
+                            <Label Text="{Binding}" FontSize="16" VerticalOptions="Center" Grid.Column="0" />
+
+                            <!-- Edit Button -->
+                            <ImageButton Source="belgi.png"
+                                         WidthRequest="50"
+                                         HeightRequest="40"
+                                         Clicked="EditTask_Clicked"
+                                         Padding="5"
+                                         Grid.Column="1"
+                                         HorizontalOptions="End"/>
+
+                            <!-- Delete Button -->
+                            <ImageButton Source="silme.png"
+                                         WidthRequest="50"
+                                         HeightRequest="40"
+                                         Clicked="DeleteTask_Clicked"
+                                         Padding="5"
+                                         Grid.Column="2"
+                                         HorizontalOptions="End"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev2_Bochra.AnaSayfa"
+             Title="Ana Sayfa"
+             BackgroundColor="DarkGray">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="20,30"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <!-- Header Frame -->
+            <Frame BackgroundColor="gray" CornerRadius="10" Padding="15" HasShadow="True">
+                <Label Text="Hoşgeldiniz"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- Profile Image -->
+            <Frame CornerRadius="30" HasShadow="True" Padding="10" BackgroundColor="Gray">
+                <Image Source="bochra.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="320"
+                       WidthRequest="250"
+                       HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- Name Section -->
+            <Frame CornerRadius="20" Padding="20" HasShadow="True" BackgroundColor="gray">
+                <Label Text="Bochra Nettour"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- Assignment Section -->
+            <Frame CornerRadius="20" Padding="15" HasShadow="True" BackgroundColor="gray">
+                <Label Text="Ödev-2"
+                   FontSize="20"
+                   FontAttributes="Italic"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- University Details -->
+            <Frame CornerRadius="20" Padding="20" HasShadow="True" BackgroundColor="gray">
+                <Label Text="Bartin Üniversitesi / Bilgisayar Mühendisliği"
+                   FontSize="20"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Frame>
+
+            <!-- Button Section (Optional Addition for Functionality) -->
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

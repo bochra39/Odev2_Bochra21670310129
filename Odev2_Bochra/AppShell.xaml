@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Odev2_Bochra"
+       x:Class="Odev2_Bochra.AppShell"
+       FlyoutBehavior="Flyout"
+       BackgroundColor="Gray"
+       TitleColor="White">
+
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="DarkGray" Padding="10, 20">
+            <Label Text="Menü"
+                   TextColor="White"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+
+    <FlyoutItem Title="Ana Sayfa" Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate local:AnaSayfa}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Kredi Hesaplama" Icon="para.png">
+        <ShellContent ContentTemplate="{DataTemplate local:KrediHesaplama}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Vucut Kitle Indexi" Icon="saglik.png">
+        <ShellContent ContentTemplate="{DataTemplate local:VucutKitleIndexi}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Renk Secici" Icon="renk.png">
+        <ShellContent ContentTemplate="{DataTemplate local:RenkSecici}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Yapılacaklar" Icon="list.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ToDoList}" />
+    </FlyoutItem>
+
+</Shell>

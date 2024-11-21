@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev2_Bochra.KrediHesaplama"
+             Title="Kredi Hesaplama"
+             BackgroundColor="White">
+
+	<VerticalStackLayout Padding="20" Spacing="15">
+
+		<!-- Title -->
+		<Frame BackgroundColor="#F0F0F0"
+               CornerRadius="10"
+               Padding="15"
+               HasShadow="True">
+			<Label Text="Kredi Hesaplama"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black" />
+		</Frame>
+
+		<!-- Picker -->
+		<Frame BackgroundColor="#F7F7F7"
+               CornerRadius="10"
+               Padding="10"
+               HasShadow="True">
+			<Picker x:Name="KrediTuruPicker"
+                    Title="Kredi Türü Seçiniz"
+                    BackgroundColor="White">
+				<Picker.Items>
+					<x:String>İhtiyaç Kredisi</x:String>
+					<x:String>Konut Kredisi</x:String>
+					<x:String>Taşıt Kredisi</x:String>
+					<x:String>Ticari Kredisi</x:String>
+				</Picker.Items>
+			</Picker>
+		</Frame>
+
+		<!-- Input Fields -->
+		<Frame BackgroundColor="#F7F7F7" CornerRadius="10" Padding="10" HasShadow="True">
+			<StackLayout Spacing="10">
+				<Entry x:Name="KrediTutarEntry"
+                       Placeholder="Kredi Tutarı (TL)"
+                       Keyboard="Numeric" />
+				<Entry x:Name="FaizOraniEntry"
+                       Placeholder="Faiz Oranı (%)"
+                       Keyboard="Numeric" />
+				<Entry x:Name="VadeEntry"
+                       Placeholder="Vade (Ay)"
+                       Keyboard="Numeric" />
+			</StackLayout>
+		</Frame>
+
+		<!-- Slider -->
+		<Frame BackgroundColor="#F7F7F7" CornerRadius="10" Padding="15" HasShadow="True">
+			<Label Text="Vade Seçimi"
+                   FontAttributes="Bold"
+                   FontSize="14"
+                   TextColor="Black" />
+			<Slider x:Name="VadeSlider"
+                    Minimum="1"
+                    Maximum="120"
+                    ValueChanged="OnVadeSliderValueChanged"
+                    ThumbColor="#7B7B7B"
+                    MinimumTrackColor="#7B7B7B" />
+		</Frame>
+
+		<!-- Output Labels -->
+		<Frame BackgroundColor="#F7F7F7"
+               CornerRadius="10"
+               Padding="10"
+               HasShadow="True">
+			<StackLayout Spacing="5">
+				<Label x:Name="AylikTaksitLabel"
+                       Text="Aylık Taksit: "
+                       TextColor="Black" />
+				<Label x:Name="ToplamOdemeLabel"
+                       Text="Toplam Ödeme: "
+                       TextColor="Black" />
+				<Label x:Name="ToplamFaizLabel"
+                       Text="Toplam Faiz: "
+                       TextColor="Black" />
+			</StackLayout>
+		</Frame>
+
+		<!-- Calculate Button -->
+		<Button x:Name="HesaplaButton"
+                Text="Hesapla"
+                BackgroundColor="#454545"
+                TextColor="White"
+                CornerRadius="20"
+                Padding="15" />
+
+	</VerticalStackLayout>
+</ContentPage>
